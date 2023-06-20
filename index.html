@@ -1,51 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full">
 <head>
     <meta charset="UTF-8">
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <title>Document</title>
     <script src="https://unpkg.com/vue@3"></script>
-    <style>
-        html, body {
-            height: 100%;
-        }
-
-        body {
-            display: grid;
-            place-items: center;
-        }
-
-        .text-red {
-            color : red;
-        }
-
-        .text-green {
-            color : green;
-        }
-    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="h-full grid place-items-center">
     <div id="app">
-    <section>
-        <h2>Assignments</h2>
+    <section class="">
+        <h2 class="font-bold mb-2">Assignments</h2>
         <ul>
-            <li>vue js</li>
-            <li>computer science</li>
-            <li>cyber security</li>
+            <li>vue js <input type="checkbox"></li>
+            <li>computer science <input type="checkbox"></li>
+            <li>cyber security <input type="checkbox"></li>
 
         </ul>
     </section>
-
-    
-    <button v-bind:class="active ? 'text-green' : 'text-red'" @click="toggle">Click me!</button>
-
-    <p>
-        <input type="text" v-model="greeting">
-    </p>
-
-    <p>{{ greeting }} lenth is: ({{ greeting.length }})</p>
-        
-
     </div>
     <script>
         Vue.createApp({
@@ -56,14 +28,6 @@
                     active: false
                 };
             },
-
-            mounted() {
-            alert("whassup?");
-
-            setTimeout(()=> {
-                this.greeting = "surprise!!!"
-            }, 3000);
-        },
 
             methods: {
                 toggle () {
