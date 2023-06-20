@@ -12,31 +12,25 @@
     <section class="">
         <h2 class="font-bold mb-2">Assignments</h2>
         <ul>
-            <li>vue js <input type="checkbox"></li>
-            <li>computer science <input type="checkbox"></li>
-            <li>cyber security <input type="checkbox"></li>
-
+            <li v-for="assign in assignments">my {{assign.name}}</li>
         </ul>
     </section>
     </div>
     <script>
-        Vue.createApp({
+        let app = {
             data() {
                 return {
-                    buttonClasses: 'text-green',
-                    greeting: 'hello world!',
-                    active: false
-                };
-            },
-
-            methods: {
-                toggle () {
-                    this.active = ! this.active;
-                    // alert("yess!");
+                    assignments : [
+                    {name: "vue js", complete: false},
+                    {name: "computer science", complete: false},
+                    {name: "cyber security", complete: false},
+                    ],
                 }
-            },
+            }
 
-        }).mount('#app');
+        }
+
+        Vue.createApp(app).mount("#app");
 
     </script>
 </body>
