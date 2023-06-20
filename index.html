@@ -9,12 +9,22 @@
 </head>
 <body class="h-full grid place-items-center">
     <div id="app">
-    <section class="">
+    <section>
         <h2 class="font-bold mb-2">Assignments</h2>
         <ul>
-            <li v-for="assign in assignments">my {{assign.name}}</li>
+            <li v-for="assign in assignments">
+            <label>
+
+                my {{assign.name}}
+                <input type="checkbox" v-model="assign.complete">
+            </label>
+            </li>
         </ul>
     </section>
+    <pre>
+        {{assignments}}
+    </pre>
+
     </div>
     <script>
         let app = {
