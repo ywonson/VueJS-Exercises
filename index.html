@@ -1,68 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full">
 <head>
     <meta charset="UTF-8">
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <title>Document</title>
     <script src="https://unpkg.com/vue@3"></script>
-    <style>
-        html, body {
-            height: 100%;
-        }
-
-        body {
-            display: grid;
-            place-items: center;
-        }
-
-        .text-red {
-            color : red;
-        }
-
-        .text-green {
-            color : green;
-        }
-    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="h-full grid place-items-center">
     <div id="app">
 
-    <button v-bind:class="active ? 'text-green' : 'text-red'" @click="toggle">Click me!</button>
-
-    <p>
-        <input type="text" v-model="greeting">
-    </p>
-
-    <p>{{ greeting }} lenth is: ({{ greeting.length }})</p>
-        
-
+    <h3>hello</h3>
+    <app-button></app-button>
     </div>
     <script>
-        Vue.createApp({
-            data() {
-                return {
-                    buttonClasses: 'text-green',
-                    greeting: 'hello world!',
-                    active: false
-                };
-            },
 
-            mounted() {
-            alert("whassup?");
-
-            setTimeout(()=> {
-                this.greeting = "surprise!!!"
-            }, 3000);
-        },
-
-            methods: {
-                toggle () {
-                    this.active = ! this.active;
-                    // alert("yess!");
-                }
-            },
-
-        }).mount('#app');
+        let app ={
+            components : {
+                'app-button': {
+                    mounted() {
+                        alert("hello?");
+                    }
+                },
+            }
+        }
+        Vue.createApp(app).mount('#app');
 
     </script>
 </body>
