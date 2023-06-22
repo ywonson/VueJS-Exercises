@@ -6,5 +6,13 @@ data() {
                         return{
                             processing: false,
                         };
-                    }
-                }
+                    },
+
+props: {
+    type: {
+        type: String,
+        default: "normal",
+    }
+    
+},
+}

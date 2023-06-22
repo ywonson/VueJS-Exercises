@@ -10,19 +10,13 @@
 <body class="h-full grid place-items-center">
     <div id="app">
 
-    <app-button>wassup?</app-button>
+    <app-button type="primary">wassup?</app-button>
     <app-button>good?</app-button>
 
     </div>
     <script type="module">
-        import hahah from "./js/components/appButton.js";
-        let app ={
-            components : {
-                'app-button': hahah
-            },
-        }
-        Vue.createApp(app).mount('#app');
-
+        import myapp from "./js/components/App.js";
+        Vue.createApp(myapp).mount('#app');
     </script>
 </body>
 </html>
