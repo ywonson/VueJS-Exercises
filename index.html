@@ -10,17 +10,18 @@
 <body class="h-full grid place-items-center">
     <div id="app">
 
-    <h3>hello</h3>
-    <app-button></app-button>
+    <app-button>wassup?</app-button>
+    <app-button>good?</app-button>
+
     </div>
     <script>
 
         let app ={
             components : {
                 'app-button': {
-                    mounted() {
-                        alert("hello?");
-                    }
+                    template: `<button class="bg-green-200 hover:bg-green-400 border rounded px-4 py-2">
+                        <slot />
+                        </button>`,
                 },
             }
         }
