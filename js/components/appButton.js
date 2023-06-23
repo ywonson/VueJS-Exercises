@@ -2,22 +2,27 @@ export default {
 template: `<button 
             :class="{
                 'px-4 py-2 disabled:cursor-not-allowed' : true,
+                'is-loading' : processings,
                 'bg-green-200 hover:bg-green-400 border rounded' : type === 'normal',
+                
             }"
-            :disabled="processing">
+            :disabled="processings">
                 <slot />
             </button>`,
-data() {
-                        return{
-                            processing: false,
-                        };
-                    },
+// data() {
+//                         return{
+//                             waitforit: false,
+//                         };
+//                     },
+
+
+
 
 props: {
     type: {
         type: String,
         default: "normal",
-    }
-    
+    },
+    processings: {type: Boolean, default: false},
 },
 }
