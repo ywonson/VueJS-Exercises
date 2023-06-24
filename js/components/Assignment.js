@@ -1,9 +1,9 @@
 export default {
   template: `
   <li>
-      <label>
-          my {{assign.name}}
-          <input type="checkbox" v-model="assign.complete">
+      <label class="p-3 flex justify-between item-center">
+          - {{assign.name}}
+          <input type="checkbox" v-model="assign.complete" class="ml-3">
       </label>
   </li>
   `,
